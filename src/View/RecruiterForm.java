@@ -4,12 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class Form extends JPanel {
+public class RecruiterForm extends JPanel {
 
     private JTextField firstnameField;
     private JTextField lastNameField;
     private JTextField emailIdField;
     private JTextField phoneNoField;
+    private JTextField companyField;
     private JTextField addressField;
     private JTextField usernameField;
     private JPasswordField passwordField;
@@ -17,12 +18,13 @@ public class Form extends JPanel {
     private JButton addButton;
     private JButton viewButton;
 
-    public Form() {
+    public RecruiterForm() {
 
         JLabel firstnameLabel = new JLabel("First Name: ");
         JLabel lastnameLabel = new JLabel("Last Name: ");
         JLabel emailIdLabel = new JLabel("Email Id: ");
         JLabel phoneNoLabel = new JLabel("Phone #: ");
+        JLabel companyLabel = new JLabel("Organization #: ");
         JLabel addressLabel = new JLabel("Address: ");
         JLabel usernameLabel = new JLabel(" Username: ");
         JLabel passwordLabel = new JLabel("Password: ");
@@ -31,13 +33,14 @@ public class Form extends JPanel {
         lastNameField = new JTextField(25);
         emailIdField = new JTextField(25);
         phoneNoField = new JTextField(25);
+        companyField = new JTextField(25);
         addressField = new JTextField(25);
         usernameField = new JTextField(25);
         passwordField = new JPasswordField(25);
 
-        addButton = new JButton("Add User");
+        addButton = new JButton("Add Recruiter");
         addButton.setPreferredSize(new Dimension(278, 40));
-        viewButton = new JButton("View All Users");
+        viewButton = new JButton("View All Recruiters");
         viewButton.setPreferredSize(new Dimension(278, 40));
 
         // space between fields
@@ -99,43 +102,54 @@ public class Form extends JPanel {
         gridBagConstraints.gridy = 8;
         gridBagConstraints.insets = buttonInset;
 
-        add(addressLabel, gridBagConstraints);
+        add(companyLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 9;
 
-        add(addressField, gridBagConstraints);
+        add(companyField, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
         gridBagConstraints.insets = buttonInset;
 
-        add(usernameLabel, gridBagConstraints);
+        add(addressLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 11;
 
-        add(usernameField, gridBagConstraints);
+        add(addressField, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 12;
         gridBagConstraints.insets = buttonInset;
 
-        add(passwordLabel, gridBagConstraints);
+        add(usernameLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 13;
 
-        add(passwordField, gridBagConstraints);
+        add(usernameField, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.insets = buttonInset;
 
-        add(addButton, gridBagConstraints);
+        add(passwordLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 15;
+
+        add(passwordField, gridBagConstraints);
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.insets = buttonInset;
+
+        add(addButton, gridBagConstraints);
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 17;
         gridBagConstraints.insets = buttonInset;
 
         add(viewButton, gridBagConstraints);
@@ -156,6 +170,9 @@ public class Form extends JPanel {
 
     public String getPhoneNo() {
         return phoneNoField.getText();
+    }
+    public String getCompany() {
+        return companyField.getText();
     }
 
     public String getAddress() {
@@ -185,6 +202,7 @@ public class Form extends JPanel {
             lastNameField.setText("");
             emailIdField.setText("");
             phoneNoField.setText("");
+            companyField.setText("");
             addressField.setText("");
             usernameField.setText("");
             passwordField.setText("");

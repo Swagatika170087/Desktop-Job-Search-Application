@@ -3,11 +3,11 @@ package Model;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Database {
+public class JobSeekerDatabase {
 
     private ArrayList<JobSeeker> jobSeekerArrayList;
 
-    public Database() {
+    public JobSeekerDatabase() {
         jobSeekerArrayList = new ArrayList<>();
     }
 
