@@ -11,7 +11,7 @@ import java.io.File;
 
 public class RecruiterController {
     // database file
-    private String databaseFile = "src\\database\\recruiterDatabase.txt";
+    private String databaseFile = "database/recruiterDatabase.txt";
     private RecruiterDatabase recruiterDatabase;
     private RecruiterForm recruiterForm;
     private RecruiterDetails recruiterDetails;

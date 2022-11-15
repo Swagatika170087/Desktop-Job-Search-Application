@@ -10,7 +10,7 @@ import java.io.File;
 
 public class JobSeekerController {
     // database file
-    private String databaseFile = "src\\database\\database.txt";
+    private String databaseFile = "database/database.txt";
     private JobSeekerDatabase jobSeekerDatabase;
     private JobSeekerForm jobSeekerForm;
     private JobSeekerDetails jobSeekerDetails;
