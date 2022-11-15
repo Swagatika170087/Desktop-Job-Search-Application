@@ -8,9 +8,9 @@ import java.awt.event.ActionListener;
 public class JobSeekerDetails extends JPanel {
 
     // Table for user data
-    private JTable userTable;
+    private JTable jobSeekerTable;
     // table column
-    private String[] userTableColumn = {"FIRST NAME", "LAST NAME"};
+    private String[] jobSeekerTableColumn = {"FIRST NAME", "LAST NAME", "Email Id", "Phone Number", "Address", "Username", "Password"};
 
     // back button
     private JButton backButton;
@@ -20,22 +20,22 @@ public class JobSeekerDetails extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         // toolbar for buttons
         JToolBar toolBar = new JToolBar();
-        userTable = new JTable();
+        jobSeekerTable = new JTable();
         // scroll bar for table
-        JScrollPane userTableScroll = new JScrollPane(userTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+        JScrollPane jobSeekerTableScroll = new JScrollPane(jobSeekerTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
                 JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         backButton = new JButton("Go Back");
         add(toolBar);
         toolBar.add(backButton);
         toolBar.setMaximumSize(new Dimension(Integer.MAX_VALUE, toolBar.getMinimumSize().height));
-        add(userTableScroll);
+        add(jobSeekerTableScroll);
 
     }
 
     // gets users from database and loads to table
-    public void getUsers(Object[] objects) {
-        DefaultTableModel defaultTableModel = (DefaultTableModel) userTable.getModel();
-        defaultTableModel.setColumnIdentifiers(userTableColumn);
+    public void getJobSeekers(Object[] objects) {
+        DefaultTableModel defaultTableModel = (DefaultTableModel) jobSeekerTable.getModel();
+        defaultTableModel.setColumnIdentifiers(jobSeekerTableColumn);
         int i = 0;
         while(i < objects.length) {
             String row = objects[i].toString().trim();

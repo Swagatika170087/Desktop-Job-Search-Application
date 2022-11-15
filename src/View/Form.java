@@ -12,7 +12,7 @@ public class Form extends JPanel {
     private JTextField phoneNoField;
     private JTextField addressField;
     private JTextField usernameField;
-    private JTextField passwordField;
+    private JPasswordField passwordField;
 
     private JButton addButton;
     private JButton viewButton;
@@ -33,7 +33,7 @@ public class Form extends JPanel {
         phoneNoField = new JTextField(25);
         addressField = new JTextField(25);
         usernameField = new JTextField(25);
-        passwordField = new JTextField(25);
+        passwordField = new JPasswordField(25);
 
         addButton = new JButton("Add User");
         addButton.setPreferredSize(new Dimension(278, 40));
@@ -150,23 +150,23 @@ public class Form extends JPanel {
         return lastNameField.getText();
     }
 
-    public String getEmailIdField() {
+    public String getEmailId() {
         return emailIdField.getText();
     }
 
-    public String getPhoneNoField() {
+    public String getPhoneNo() {
         return phoneNoField.getText();
     }
 
-    public String getAddressField() {
+    public String getAddress() {
         return addressField.getText();
     }
 
-    public String getUsernameField() {
+    public String getUsername() {
         return usernameField.getText();
     }
 
-    public String getPasswordField() {
+    public String getPassword() {
         return passwordField.getText();
     }
 

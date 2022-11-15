@@ -10,7 +10,7 @@ import java.io.File;
 
 public class JobSeekerController {
     // database file
-    private String databaseFile = "src\\data\\database.txt";
+    private String databaseFile = "file:src\\database\\database.txt";
     private Database database;
     private Form form;
     private JobSeekerDetails jobSeekerDetails;
@@ -20,15 +20,15 @@ public class JobSeekerController {
         this.form = form;
         this.jobSeekerDetails = jobSeekerDetails;
 
-        // submit user
+        // submit job seeker
         this.form.submitUsers(e -> {
             String firstname = this.form.getFirstname().trim();
             String lastname = this.form.getLastname().trim();
-            String emailId = this.form.getFirstname().trim();
-            String phoneNo = this.form.getFirstname().trim();
-            String address = this.form.getFirstname().trim();
-            String username = this.form.getFirstname().trim();
-            String password = this.form.getFirstname().trim();
+            String emailId = this.form.getEmailId().trim();
+            String phoneNo = this.form.getPhoneNo().trim();
+            String address = this.form.getAddress().trim();
+            String username = this.form.getUsername().trim();
+            String password = this.form.getPassword().trim();
 
             // simple validations
             if(firstname.isEmpty()) {
@@ -66,9 +66,9 @@ public class JobSeekerController {
             this.form.reset(true);
         });
 
-        // load users
+        // load job seekers
         this.form.viewUsers(e -> {
-            this.jobSeekerDetails.getUsers(this.database.loadJobSeekers(new File(databaseFile)));
+            this.jobSeekerDetails.getJobSeekers(this.database.loadJobSeekers(new File(databaseFile)));
         });
     }
 }
