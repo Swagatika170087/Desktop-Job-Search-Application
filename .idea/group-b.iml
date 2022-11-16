@@ -6,19 +6,28 @@
       <sourceFolder url="file://$MODULE_DIR$/database" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/images" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resourcesTeamB" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://G:/My Drive/Monash University/Master of Computer Science (Software Engineering)/ITO5136 Software engineering TP6-22/_SQLite/sqlite-jdbc-3.39.4.0.jar!/" />
-          <root url="jar://G:/My Drive/Monash University/Master of Computer Science (Software Engineering)/ITO5136 Software engineering TP6-22/_SQLite/rs2xml.jar!/" />
+          <root url="jar://$MODULE_DIR$/resourcesTeamB/rs2xml.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://G:/My Drive/Monash University/Master of Computer Science (Software Engineering)/ITO5136 Software engineering TP6-22/_SQLite/rs2xml.jar!/src" />
+          <root url="jar://$MODULE_DIR$/resourcesTeamB/rs2xml.jar!/src" />
         </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/resourcesTeamB/sqlite-jdbc-3.39.4.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
       </library>
     </orderEntry>
   </component>
