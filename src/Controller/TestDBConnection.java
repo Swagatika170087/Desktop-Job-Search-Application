@@ -46,9 +46,6 @@ public class TestDBConnection {
             panel.add(jpane);
             frame.add(new JScrollPane(panel));
             frame.setVisible(true);
-
-
-
         }
         catch(SQLException e)
         {
