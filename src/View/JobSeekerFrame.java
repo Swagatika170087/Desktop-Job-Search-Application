@@ -16,20 +16,18 @@ public class JobSeekerFrame extends JFrame {
     }
     private void initComponents(){
         cardLayout = new CardLayout();
-        JobSeekerForm jobSeekerForm = new JobSeekerForm();
+        JobSeekerLoginForm jobSeekerLoginForm = new JobSeekerLoginForm();
         JobSeekerDetails jobSeekerDetails = new JobSeekerDetails();
         // sets our layout as a card layout
         setLayout(cardLayout);
 
         // initialize Job seeker controller
-        new JobSeekerController(jobSeekerForm, jobSeekerDetails);
+        new JobSeekerController(jobSeekerLoginForm);
 
         // adds view to card layout with unique constraints
-        add(jobSeekerForm, "form");
-        add(jobSeekerDetails, "Job Seeker details");
+        add(jobSeekerLoginForm, "Job Seeker Login");
         // switch view according to its constraints on click
-        jobSeekerForm.viewUsers(e -> cardLayout.show(JobSeekerFrame.this.getContentPane(), "Job Seeker details"));
-        jobSeekerDetails.backButton(e -> cardLayout.show(JobSeekerFrame.this.getContentPane(), "form"));
+        jobSeekerLoginForm.loginJobSeeker(e -> cardLayout.show(JobSeekerFrame.this.getContentPane(), "Job Seeker Login"));
 
         // icon for our application
         ImageIcon imageIcon = new ImageIcon("src/images/download.jpeg");

@@ -1,59 +1,21 @@
 package Model;
 
-public class Recruiter {
-    private String firstname;
-    private String lastname;
-    private String emailId;
-    private String phoneNo;
+public class Recruiter extends User{
+    private String recruiterId;
     private String company;
-    private String address;
-    private String username;
-    private String password;
-
-    public Recruiter() {
-        // empty constructor
+    public Recruiter(String username, String password) {
+        super(username, password);
     }
-
-    public Recruiter(String firstname, String lastname, String emailId, String phoneNo, String company, String address, String username, String password) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.emailId = emailId;
-        this.phoneNo = phoneNo;
-        this.address = address;
-        this.username = username;
-        this.password = password;
+    public Recruiter(String firstname, String lastname, String emailId, String phoneNo, String company, String city, String state, String country, String username, String password) {
+        super(firstname, lastname, emailId, phoneNo, city, state, country, username, password);
         this.company = company;
     }
-
     // getters
-    public String getFirstname() {
-        return firstname;
+    public String getRecruiterId() {
+        return recruiterId;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public String getEmailId() {
-        return emailId;
-    }
-
-    public String getPhoneNo() {
-        return phoneNo;
-    }
     public String getCompany() {
         return company;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
     }
 }

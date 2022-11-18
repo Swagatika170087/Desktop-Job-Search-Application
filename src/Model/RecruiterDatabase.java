@@ -32,7 +32,9 @@ public class RecruiterDatabase {
                             ", " + recruiter.getEmailId() +
                             ", " + recruiter.getPhoneNo() +
                             ", " + recruiter.getCompany() +
-                            ", " + recruiter.getAddress() +
+                            ", " + recruiter.getCity() +
+                            ", " + recruiter.getState() +
+                            ", " + recruiter.getCountry() +
                             ", " + recruiter.getUsername() +
                             ", " + recruiter.getPassword();
                 i++;

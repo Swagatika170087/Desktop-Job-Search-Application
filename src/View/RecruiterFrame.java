@@ -1,6 +1,5 @@
 package View;
 
-import Controller.JobSeekerController;
 import Controller.RecruiterController;
 
 import javax.swing.*;
@@ -29,7 +28,7 @@ public class RecruiterFrame extends JFrame {
         add(recruiterForm, "form");
         add(recruiterDetails, "Recruiter details");
         // switch view according to its constraints on click
-        recruiterForm.viewUsers(e -> cardLayout.show(RecruiterFrame.this.getContentPane(), "Recruiter details"));
+        recruiterForm.viewRecruiters(e -> cardLayout.show(RecruiterFrame.this.getContentPane(), "Recruiter details"));
         recruiterDetails.backButton(e -> cardLayout.show(RecruiterFrame.this.getContentPane(), "form"));
 
         // icon for our application

@@ -1,6 +1,5 @@
 package Controller;
 
-import Model.JobSeekerDatabase;
 import Model.Recruiter;
 import Model.RecruiterDatabase;
 import View.RecruiterDetails;
@@ -22,13 +21,15 @@ public class RecruiterController {
         this.recruiterDetails = recruiterDetails;
 
         // submit job seeker
-        this.recruiterForm.submitUsers(e -> {
+        this.recruiterForm.submitRecruiters(e -> {
             String firstname = this.recruiterForm.getFirstname().trim();
             String lastname = this.recruiterForm.getLastname().trim();
             String emailId = this.recruiterForm.getEmailId().trim();
             String phoneNo = this.recruiterForm.getPhoneNo().trim();
             String company = this.recruiterForm.getCompany().trim();
-            String address = this.recruiterForm.getAddress().trim();
+            String city = this.recruiterForm.getCity().trim();
+            String state = this.recruiterForm.getState().trim();
+            String country = this.recruiterForm.getCountry().trim();
             String username = this.recruiterForm.getUsername().trim();
             String password = this.recruiterForm.getPassword().trim();
 
@@ -53,10 +54,18 @@ public class RecruiterController {
                 JOptionPane.showMessageDialog(this.recruiterForm, "Organization Name Required.", "Error",
                         JOptionPane.ERROR_MESSAGE);
                 return;
-            } else if(address.isEmpty()) {
-                JOptionPane.showMessageDialog(this.recruiterForm, "Address Required.", "Error",
+            } else if(city.isEmpty()) {
+                JOptionPane.showMessageDialog(this.recruiterForm, "City Required.", "Error",
                         JOptionPane.ERROR_MESSAGE);
                 return;
+            } else if(state.isEmpty()) {
+                JOptionPane.showMessageDialog(this.recruiterForm, "State Required.", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }else if(country.isEmpty()) {
+                    JOptionPane.showMessageDialog(this.recruiterForm, "Country Required.", "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                    return;
             } else if(username.isEmpty()) {
                 JOptionPane.showMessageDialog(this.recruiterForm, "Username Required.", "Error",
                         JOptionPane.ERROR_MESSAGE);
@@ -67,14 +76,14 @@ public class RecruiterController {
                 return;
             }
 
-            this.recruiterDatabase.addRecruiter(new Recruiter(firstname, lastname, emailId, phoneNo, company, address, username, password));
+            this.recruiterDatabase.addRecruiter(new Recruiter(firstname, lastname, emailId, phoneNo, company, city, state, country, username, password));
             this.recruiterDatabase.saveRecruiter(new File(databaseFile));
             this.recruiterForm.reset(true);
         });
 
-        // load job seekers
-        this.recruiterForm.viewUsers(e -> {
-            this.recruiterDetails.getJobSeekers(this.recruiterDatabase.loadRecruiters(new File(databaseFile)));
+        // load Recruiters
+        this.recruiterForm.viewRecruiters(e -> {
+            this.recruiterDetails.getRecruiters(this.recruiterDatabase.loadRecruiters(new File(databaseFile)));
         });
     }
 }
