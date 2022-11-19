@@ -7,6 +7,9 @@
       <sourceFolder url="file://$MODULE_DIR$/images" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/resourcesTeamB" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/boundary" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/control" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/model" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
