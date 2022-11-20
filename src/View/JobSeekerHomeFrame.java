@@ -1,62 +1,89 @@
 package View;
 
+import Controller.JobSeekerController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class JobSeekerHomeFrame extends JFrame {
-        ImageIcon image = new ImageIcon("images/pic1.PNG");
 
-        private JLabel imageLabel;
-        private JLabel message;
-        private JMenu adminMenu;
-        private JMenuBar homeMenuBar;
-        private JMenuItem jobSeekerDetails;
-        private JMenuItem recruiterDetails;
-        private JMenuItem jobDetails;
-        private JMenuItem jMenuItem;
+    private CardLayout cardLayout;
+    ImageIcon image = new ImageIcon("images/pic1.PNG");
 
-        public JobSeekerHomeFrame() {
-            super("Home");
-            initComponents();
-            imageLabel.setIcon(image);
-        }
-        @SuppressWarnings("unchecked")
-        private void initComponents() {
-            message = new JLabel();
-            imageLabel = new JLabel();
-            homeMenuBar = new JMenuBar();
-            adminMenu = new JMenu();
-            jobSeekerDetails = new JMenuItem();
-            recruiterDetails = new JMenuItem();
-            jobDetails = new JMenuItem();
-            jMenuItem = new JMenuItem();
+    private JLabel imageLabel;
+    private JLabel message;
+    private JMenu jobSeekerMenu;
+    private JMenuBar homeMenuBar;
+    private JMenuItem jobSeekerProfile;
+    private JMenuItem recruiterDetails;
+    private JMenuItem jobDetails;
+    private JMenuItem jMenuItem;
 
-            jMenuItem.setText("Menu");
-            setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    public JobSeekerHomeFrame() {
+        super("Home");
+        initComponents();
+        imageLabel.setIcon(image);
+    }
+    @SuppressWarnings("unchecked")
+    private void initComponents() {
+        cardLayout = new CardLayout();
+
+        JobSeekerForm jobSeekerForm = new JobSeekerForm();
+        // sets our layout as a card layout
+        setLayout(cardLayout);
+
+        // initialize Job seeker controller
+        new JobSeekerController(jobSeekerForm);
+        add(jobSeekerProfile, "Job Seeker");
+        // switch view according to its constraints on click
+        jobSeekerForm.viewJobSeekers(e -> cardLayout.show(JobSeekerHomeFrame.this.getContentPane(), "Job Seeker Home"));
+
+        // icon for our application
+        ImageIcon imageIcon = new ImageIcon("src/images/download.jpeg");
+        setIconImage(imageIcon.getImage());
+        // frame width & height
+        int FRAME_WIDTH = 1200;
+        int FRAME_HEIGHT = 700;
+        // size of our application frame
+        setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        /*
+        message = new JLabel();
+        imageLabel = new JLabel();
+        homeMenuBar = new JMenuBar();
+        jobSeekerMenu = new JMenu();
+        jobSeekerDetails = new JMenuItem();
+        recruiterDetails = new JMenuItem();
+        jobDetails = new JMenuItem();
+        jMenuItem = new JMenuItem();
+
+        jMenuItem.setText("Menu");
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             setBackground(new Color(255, 255, 255));
             message.setFont(new Font("Times New Roman", 1, 24)); // NOI18N
             message.setText("Welcome to JSS");
 
             homeMenuBar.setFont(new Font("Times New Roman", 0, 18)); // NOI18N
 
-            adminMenu.setText("Job Seeker");
-            adminMenu.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
-            adminMenu.setMargin(new Insets(10, 10, 10, 10));
+            jobSeekerMenu.setText("Job Seeker");
+            jobSeekerMenu.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
+            jobSeekerMenu.setMargin(new Insets(10, 10, 10, 10));
 
             jobSeekerDetails.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
-            jobSeekerDetails.setText("Job Seeker Details");
+            jobSeekerDetails.setText("Profile");
             jobSeekerDetails.setMargin(new Insets(10, 10, 10, 10));
             jobSeekerDetails.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     jobSeekerDetailsActionPerformed(evt);
                 }
             });
-            adminMenu.add(jobSeekerDetails);
+            jobSeekerMenu.add(jobSeekerDetails);
 
             jobDetails.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
-            jobDetails.setText("Job Details");
+            jobDetails.setText("Job Applications");
             jobDetails.setMargin(new Insets(10, 10, 10, 10));
             jobDetails.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
@@ -64,10 +91,10 @@ public class JobSeekerHomeFrame extends JFrame {
                     jobDetailsActionPerformed(evt);
                 }
             });
-            adminMenu.add(jobDetails);
+            jobSeekerMenu.add(jobDetails);
 
             recruiterDetails.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
-            recruiterDetails.setText("Recruiter Details");
+            recruiterDetails.setText("Interview Invites");
             recruiterDetails.setMargin(new Insets(10, 10, 10, 10));
             recruiterDetails.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
@@ -75,9 +102,9 @@ public class JobSeekerHomeFrame extends JFrame {
                     recruiterDetailsActionPerformed(evt);
                 }
             });
-            adminMenu.add(recruiterDetails);
+            jobSeekerMenu.add(recruiterDetails);
 
-            homeMenuBar.add(adminMenu);
+            homeMenuBar.add(jobSeekerMenu);
 
             setJMenuBar(homeMenuBar);
 
@@ -128,6 +155,7 @@ public class JobSeekerHomeFrame extends JFrame {
             recruiterFrame.setLocationRelativeTo(null);
             recruiterFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE  );
         }
-
+       */
+    }
 }
 

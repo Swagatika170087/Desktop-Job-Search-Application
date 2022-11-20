@@ -46,9 +46,9 @@ public class JobSeekerDatabase {
                             ", " + jobSeeker.getLastname() +
                             ", " + jobSeeker.getEmailId() +
                             ", " + jobSeeker.getPhoneNo() +
-                            ", " + jobSeeker.getCity() +
-                            ", " + jobSeeker.getState() +
-                            ", " + jobSeeker.getCountry() +
+                            ", " + jobSeeker.getAddress().getCity() +
+                            ", " + jobSeeker.getAddress().getState() +
+                            ", " + jobSeeker.getAddress().getCountry() +
                             ", " + jobSeeker.getUsername() +
                             ", " + jobSeeker.getPassword();
                 i++;

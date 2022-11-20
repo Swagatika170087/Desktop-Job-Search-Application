@@ -13,7 +13,8 @@ public class JobSeekerForm extends JPanel {
     private JTextField cityField;
     private JTextField stateField;
     private JTextField countryField;
-    private JTextField qualificationField;
+    private JTextField qualificationsField;
+    private JTextField skillsField;
     private JTextField usernameField;
     private JPasswordField passwordField;
 
@@ -33,7 +34,8 @@ public class JobSeekerForm extends JPanel {
         JLabel cityLabel = new JLabel("City: ");
         JLabel stateLabel = new JLabel("State: ");
         JLabel countryLabel = new JLabel("Country: ");
-        JLabel qualificationLabel = new JLabel("Qualification");
+        JLabel qualificationLabel = new JLabel("Qualification: ");
+        JLabel skillsLabel = new JLabel("Skills: ");
         JLabel usernameLabel = new JLabel(" Username: ");
         JLabel passwordLabel = new JLabel("Password: ");
 
@@ -44,7 +46,8 @@ public class JobSeekerForm extends JPanel {
         cityField = new JTextField(25);
         stateField = new JTextField(25);
         countryField = new JTextField(25);
-        qualificationField = new JTextField(25);
+        qualificationsField = new JTextField(50);
+        skillsField = new JTextField(50);
         usernameField = new JTextField(25);
         passwordField = new JPasswordField(25);
 
@@ -150,38 +153,49 @@ public class JobSeekerForm extends JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 15;
 
-        add(qualificationField, gridBagConstraints);
+        add(qualificationsField, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 16;
         gridBagConstraints.insets = buttonInset;
 
-        add(usernameLabel, gridBagConstraints);
+        add(skillsLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 17;
 
-        add(usernameField, gridBagConstraints);
+        add(skillsField, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 18;
         gridBagConstraints.insets = buttonInset;
 
-        add(passwordLabel, gridBagConstraints);
+        add(usernameLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 19;
 
-        add(passwordField, gridBagConstraints);
+        add(usernameField, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 20;
         gridBagConstraints.insets = buttonInset;
 
-        add(addButton, gridBagConstraints);
+        add(passwordLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 21;
+
+        add(passwordField, gridBagConstraints);
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.insets = buttonInset;
+
+        add(addButton, gridBagConstraints);
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 23;
         gridBagConstraints.insets = buttonInset;
 
         add(viewButton, gridBagConstraints);
@@ -215,8 +229,12 @@ public class JobSeekerForm extends JPanel {
         return countryField.getText();
     }
 
-    public String getQualification() {
-        return qualificationField.getText();
+    public String getQualifications() {
+        return qualificationsField.getText();
+    }
+
+    public String getSkills() {
+        return skillsField.getText();
     }
 
     public String getUsername() {
@@ -245,7 +263,8 @@ public class JobSeekerForm extends JPanel {
             cityField.setText("");
             stateField.setText("");
             countryField.setText("");
-            qualificationField.setText("");
+            qualificationsField.setText("");
+            skillsField.setText("");
             usernameField.setText("");
             passwordField.setText("");
         }

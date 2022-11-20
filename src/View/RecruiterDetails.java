@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class RecruiterDetails extends JPanel {
 
@@ -33,15 +35,20 @@ public class RecruiterDetails extends JPanel {
     }
 
     // gets users from database and loads to table
-    public void getRecruiters(Object[] objects) {
+    public void getRecruiters(ResultSet result) {
         DefaultTableModel defaultTableModel = (DefaultTableModel) recruiterTable.getModel();
         defaultTableModel.setColumnIdentifiers(recruiterTableColumn);
         int i = 0;
-        while(i < objects.length) {
-            String row = objects[i].toString().trim();
-            String[] rows = row.split(",");
-            defaultTableModel.addRow(rows);
-            i++;
+        try {
+            if (result.next()) {
+                while(result.next()) {
+                    String row = result.toString().trim();
+                    String[] rows = row.split(",");
+                    defaultTableModel.addRow(rows);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

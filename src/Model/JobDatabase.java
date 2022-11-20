@@ -30,7 +30,7 @@ public class JobDatabase {
                             ", " + job.getJobDesc() +
                             ", " + job.getSkills() +
                             ", " + job.getCompany() +
-                            ", " + job.getLocation() +
+                            ", " + job.getAddress().getCity() +
                             ", " + job.getCompensation() +
                             ", " + job.getQualification() +
                             ", " + job.getExperience();

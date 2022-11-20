@@ -1,22 +1,51 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class JobSeeker extends User{
-    private int jobSeekerId;
-    private String qualification;
-    public JobSeeker(String username, String password) {
-        super(username, password);
-    }
-    public JobSeeker(String firstname, String lastname, String emailId, String phoneNo, String city, String state, String country, String qualification, String username, String password) {
-        super(firstname, lastname, emailId, phoneNo, city, state, country, username, password);
-        this.qualification = qualification;
-    }
+    private int userId;
+    private ArrayList<String> skills;
+    private ArrayList<String> qualifications;
+
     // getters
-
-    public int getJobSeekerId() {
-        return jobSeekerId;
+    public ArrayList<String> getQualifications() {
+        return qualifications;
     }
 
-    public String getQualification() {
-        return qualification;
+    public ArrayList<String> getSkills() {
+        return skills;
+    }
+
+    @Override
+    public int getUserId() {
+        return userId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof JobSeeker)) return false;
+        if (!super.equals(o)) return false;
+        JobSeeker jobSeeker = (JobSeeker) o;
+        return getUserId() == jobSeeker.getUserId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getUserId());
+    }
+
+    @Override
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public void setSkills(ArrayList<String> skills) {
+        this.skills = skills;
+    }
+
+    public void setQualifications(ArrayList<String> qualifications) {
+        this.qualifications = qualifications;
     }
 }
