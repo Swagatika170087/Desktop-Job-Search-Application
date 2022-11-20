@@ -18,7 +18,7 @@ public class TestDBConnection {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
-            String query = "select * from Recruiter INNER JOIN User ON User.userId = Recruiter.recruiterId";
+            String query = "select * from Recruiter INNER JOIN User ON User.userId = Recruiter.userId";
 
             ResultSet rs = statement.executeQuery(query);
 
