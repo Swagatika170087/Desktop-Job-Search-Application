@@ -24,7 +24,7 @@ public class HomeFrame extends JFrame {
     private JMenuItem jMenuItem1;
 
     public HomeFrame() {
-        super("Java Swing MVC");
+        super("Monash Job Seeker");
         initComponents();
         imageLabel.setIcon(image);
     }
@@ -65,11 +65,11 @@ public class HomeFrame extends JFrame {
         });
         jobSeekerMenu.add(jobSeekerRegister);
 
-        jobSeekerLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jobSeekerLogin.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
         jobSeekerLogin.setText("Login");
-        jobSeekerLogin.setMargin(new java.awt.Insets(5, 10, 5, 10));
-        jobSeekerLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jobSeekerLogin.setMargin(new Insets(5, 10, 5, 10));
+        jobSeekerLogin.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 jobSeekerLoginActionPerformed(evt);
             }
         });
@@ -78,24 +78,24 @@ public class HomeFrame extends JFrame {
         homeMenuBar.add(jobSeekerMenu);
 
         recruiterMenu.setText("Recruiter");
-        recruiterMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        recruiterMenu.setMargin(new java.awt.Insets(10, 10, 10, 10));
+        recruiterMenu.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
+        recruiterMenu.setMargin(new Insets(10, 10, 10, 10));
 
-        recruiterRegister.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        recruiterRegister.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
         recruiterRegister.setText("Register");
-        recruiterRegister.setMargin(new java.awt.Insets(10, 10, 5, 10));
-        recruiterRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        recruiterRegister.setMargin(new Insets(10, 10, 5, 10));
+        recruiterRegister.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 recruiterRegisterActionPerformed(evt);
             }
         });
         recruiterMenu.add(recruiterRegister);
 
-        recruiterLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        recruiterLogin.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
         recruiterLogin.setText("Login");
-        recruiterLogin.setMargin(new java.awt.Insets(5, 10, 10, 10));
-        recruiterLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        recruiterLogin.setMargin(new Insets(5, 10, 10, 10));
+        recruiterLogin.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 recruiterLoginActionPerformed(evt);
             }
         });
@@ -104,13 +104,13 @@ public class HomeFrame extends JFrame {
         homeMenuBar.add(recruiterMenu);
 
         adminMenu.setText("Admin");
-        adminMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        adminMenu.setMargin(new java.awt.Insets(10, 10, 10, 10));
+        adminMenu.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
+        adminMenu.setMargin(new Insets(10, 10, 10, 10));
 
-        adminLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        adminLogin.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
         adminLogin.setText("Login Admin");
-        adminLogin.setMargin(new java.awt.Insets(10, 10, 10, 10));
-        adminLogin.addActionListener(new java.awt.event.ActionListener() {
+        adminLogin.setMargin(new Insets(10, 10, 10, 10));
+        adminLogin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 adminLoginActionPerformed(evt);
             }
@@ -149,39 +149,34 @@ public class HomeFrame extends JFrame {
     }
 
     private void jobSeekerRegisterActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here:
         JobSeekerFrame jobSeekerFrame = new JobSeekerFrame();
         jobSeekerFrame.setVisible(true);
         jobSeekerFrame.setLocationRelativeTo(null);
         jobSeekerFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE  );
     }
 
-    private void jobSeekerLoginActionPerformed(ActionEvent evt) {//GEN-FIRST:event_loginjsbuttonActionPerformed
-        // TODO add your handling code here:
+    private void jobSeekerLoginActionPerformed(ActionEvent evt) {
         JobSeekerFrame  jobSeekerFrame= new JobSeekerFrame();
         jobSeekerFrame.setVisible(true);
         jobSeekerFrame.setLocationRelativeTo(null);
         jobSeekerFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE  );
     }
 
-    private void recruiterRegisterActionPerformed(ActionEvent evt) {//GEN-FIRST:event_regcbuttonActionPerformed
-        // TODO add your handling code here:
+    private void recruiterRegisterActionPerformed(ActionEvent evt) {
         RecruiterFrame recruiterFrame = new RecruiterFrame();
         recruiterFrame.setVisible(true);
         recruiterFrame.setLocationRelativeTo(null);
         recruiterFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE  );
     }
 
-    private void recruiterLoginActionPerformed(ActionEvent evt) {//GEN-FIRST:event_logincbuttonActionPerformed
-        // TODO add your handling code here:
+    private void recruiterLoginActionPerformed(ActionEvent evt) {
         RecruiterFrame recruiterFrame = new RecruiterFrame();
         recruiterFrame.setVisible(true);
         recruiterFrame.setLocationRelativeTo(null);
         recruiterFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE  );
     }
 
-    private void adminLoginActionPerformed(ActionEvent evt) {//GEN-FIRST:event_loginabuttonActionPerformed
-        // TODO add your handling code here:
+    private void adminLoginActionPerformed(ActionEvent evt) {
         AdminFrame adminFrame = new AdminFrame();
         adminFrame.setVisible(true);
         adminFrame.setLocationRelativeTo(null);
@@ -206,7 +201,6 @@ public class HomeFrame extends JFrame {
     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
         java.util.logging.Logger.getLogger(HomeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
-    //</editor-fold>
 
     /* Create and display the form */
         EventQueue.invokeLater(new Runnable() {
