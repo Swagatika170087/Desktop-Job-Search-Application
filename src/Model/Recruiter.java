@@ -1,59 +1,38 @@
 package Model;
 
-public class Recruiter {
-    private String firstname;
-    private String lastname;
-    private String emailId;
-    private String phoneNo;
+import java.util.Objects;
+
+public class Recruiter extends User{
+    private int userId;
     private String company;
-    private String address;
-    private String username;
-    private String password;
-
-    public Recruiter() {
-        // empty constructor
-    }
-
-    public Recruiter(String firstname, String lastname, String emailId, String phoneNo, String company, String address, String username, String password) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.emailId = emailId;
-        this.phoneNo = phoneNo;
-        this.address = address;
-        this.username = username;
-        this.password = password;
-        this.company = company;
-    }
-
     // getters
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public String getEmailId() {
-        return emailId;
-    }
-
-    public String getPhoneNo() {
-        return phoneNo;
-    }
     public String getCompany() {
         return company;
     }
-
-    public String getAddress() {
-        return address;
+    public int getUserId() {
+        return userId;
     }
 
-    public String getUsername() {
-        return username;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Recruiter)) return false;
+        if (!super.equals(o)) return false;
+        Recruiter recruiter = (Recruiter) o;
+        return getUserId() == recruiter.getUserId() && Objects.equals(getCompany(), recruiter.getCompany());
     }
 
-    public String getPassword() {
-        return password;
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getUserId(), getCompany());
+    }
+
+    @Override
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 }

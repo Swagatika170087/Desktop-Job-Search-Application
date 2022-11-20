@@ -1,54 +1,51 @@
 package Model;
 
-public class JobSeeker {
-    private String firstname;
-    private String lastname;
-    private String emailId;
-    private String phoneNo;
-    private String address;
-    private String username;
-    private String password;
+import java.util.ArrayList;
+import java.util.Objects;
 
-    public JobSeeker() {
-        // empty constructor
-    }
-
-    public JobSeeker(String firstname, String lastname, String emailId, String phoneNo, String address, String username, String password) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.emailId = emailId;
-        this.phoneNo = phoneNo;
-        this.address = address;
-        this.username = username;
-        this.password = password;
-    }
+public class JobSeeker extends User{
+    private int userId;
+    private ArrayList<String> skills;
+    private ArrayList<String> qualifications;
 
     // getters
-    public String getFirstname() {
-        return firstname;
+    public ArrayList<String> getQualifications() {
+        return qualifications;
     }
 
-    public String getLastname() {
-        return lastname;
+    public ArrayList<String> getSkills() {
+        return skills;
     }
 
-    public String getEmailId() {
-        return emailId;
+    @Override
+    public int getUserId() {
+        return userId;
     }
 
-    public String getPhoneNo() {
-        return phoneNo;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof JobSeeker)) return false;
+        if (!super.equals(o)) return false;
+        JobSeeker jobSeeker = (JobSeeker) o;
+        return getUserId() == jobSeeker.getUserId();
     }
 
-    public String getAddress() {
-        return address;
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getUserId());
     }
 
-    public String getUsername() {
-        return username;
+    @Override
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public String getPassword() {
-        return password;
+    public void setSkills(ArrayList<String> skills) {
+        this.skills = skills;
+    }
+
+    public void setQualifications(ArrayList<String> qualifications) {
+        this.qualifications = qualifications;
     }
 }

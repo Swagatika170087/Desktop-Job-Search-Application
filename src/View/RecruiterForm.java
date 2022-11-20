@@ -11,7 +11,9 @@ public class RecruiterForm extends JPanel {
     private JTextField emailIdField;
     private JTextField phoneNoField;
     private JTextField companyField;
-    private JTextField addressField;
+    private JTextField cityField;
+    private JTextField stateField;
+    private JTextField countryField;
     private JTextField usernameField;
     private JPasswordField passwordField;
 
@@ -25,7 +27,9 @@ public class RecruiterForm extends JPanel {
         JLabel emailIdLabel = new JLabel("Email Id: ");
         JLabel phoneNoLabel = new JLabel("Phone #: ");
         JLabel companyLabel = new JLabel("Organization #: ");
-        JLabel addressLabel = new JLabel("Address: ");
+        JLabel cityLabel = new JLabel("City: ");
+        JLabel stateLabel = new JLabel("State: ");
+        JLabel countryLabel = new JLabel("Country: ");
         JLabel usernameLabel = new JLabel(" Username: ");
         JLabel passwordLabel = new JLabel("Password: ");
 
@@ -34,7 +38,9 @@ public class RecruiterForm extends JPanel {
         emailIdField = new JTextField(25);
         phoneNoField = new JTextField(25);
         companyField = new JTextField(25);
-        addressField = new JTextField(25);
+        cityField = new JTextField(25);
+        stateField = new JTextField(25);
+        countryField = new JTextField(25);
         usernameField = new JTextField(25);
         passwordField = new JPasswordField(25);
 
@@ -113,43 +119,65 @@ public class RecruiterForm extends JPanel {
         gridBagConstraints.gridy = 10;
         gridBagConstraints.insets = buttonInset;
 
-        add(addressLabel, gridBagConstraints);
+        add(cityLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 11;
 
-        add(addressField, gridBagConstraints);
+        add(cityField, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 12;
         gridBagConstraints.insets = buttonInset;
 
-        add(usernameLabel, gridBagConstraints);
+        add(stateLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 13;
 
-        add(usernameField, gridBagConstraints);
+        add(stateField, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.insets = buttonInset;
 
-        add(passwordLabel, gridBagConstraints);
+        add(countryLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 15;
 
-        add(passwordField, gridBagConstraints);
+        add(countryField, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 16;
         gridBagConstraints.insets = buttonInset;
 
-        add(addButton, gridBagConstraints);
+        add(usernameLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 17;
+
+        add(usernameField, gridBagConstraints);
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.insets = buttonInset;
+
+        add(passwordLabel, gridBagConstraints);
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 19;
+
+        add(passwordField, gridBagConstraints);
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.insets = buttonInset;
+
+        add(addButton, gridBagConstraints);
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 21;
         gridBagConstraints.insets = buttonInset;
 
         add(viewButton, gridBagConstraints);
@@ -175,8 +203,14 @@ public class RecruiterForm extends JPanel {
         return companyField.getText();
     }
 
-    public String getAddress() {
-        return addressField.getText();
+    public String getCity() {
+        return cityField.getText();
+    }
+    public String getState() {
+        return stateField.getText();
+    }
+    public String getCountry() {
+        return countryField.getText();
     }
 
     public String getUsername() {
@@ -184,14 +218,14 @@ public class RecruiterForm extends JPanel {
     }
 
     public String getPassword() {
-        return passwordField.getText();
+        return String.valueOf(passwordField);
     }
 
-    public void submitUsers(ActionListener actionListener) {
+    public void submitRecruiters(ActionListener actionListener) {
         addButton.addActionListener(actionListener);
     }
 
-    public void viewUsers(ActionListener actionListener) {
+    public void viewRecruiters(ActionListener actionListener) {
         viewButton.addActionListener(actionListener);
     }
 
@@ -203,7 +237,9 @@ public class RecruiterForm extends JPanel {
             emailIdField.setText("");
             phoneNoField.setText("");
             companyField.setText("");
-            addressField.setText("");
+            cityField.setText("");
+            stateField.setText("");
+            countryField.setText("");
             usernameField.setText("");
             passwordField.setText("");
         }
